@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>السودان تموت صمتا</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* أنماط عامة */
+        :root {
+            --primary-color: #1a472a;
+            --secondary-color: #d4af37;
+            --accent-color: #8b0000;
+            --light-color: #f5f5f5;
+            --dark-color: #333;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* أنماط الشريط العلوي */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.2);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--secondary-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* أنماط الأقسام */
+        section {
+            padding: 6rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+            position: relative;
+            font-size: 2.2rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            border-radius: 2px;
+        }
+        
+        /* قسم البطل */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1581791533174-9b15748bd63a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            margin-top: 0;
+            padding: 0 20px;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin-bottom: 2.5rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+            padding: 0.9rem 2rem;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: var(--transition);
+            cursor: pointer;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .btn:hover {
+            background-color: #b8941f;
+            transform: translateY(-5px);
+            box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+        }
+        
+        /* أنماط الجدول الزمني للأزمة - محسّن */
+        .crisis-timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .crisis-timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 3px;
+        }
+        
+        .timeline-item {
+            padding: 15px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+        
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* المحطات الفردية (1, 3, 5, 7) على اليمين */
+        .timeline-item:nth-child(odd) {
+            Right:75%;
+        }
+        
+        /* المحطات الزوجية (2, 4, 6, 8) على اليسار */
+        .timeline-item:nth-child(even) {
+            left: 0%;
+        }
+        
+        .timeline-content {
+            padding: 25px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            position: relative;
+            transition: var(--transition);
+            border-right: 4px solid var(--primary-color);
+        }
+        
+        /* المحطات على اليسار لها لون مختلف */
+        .timeline-item:nth-child(even) .timeline-content {
+            border-right: none;
+            border-left: 4px solid var(--accent-color);
+        }
+        
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .timeline-content::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            right: -12px;
+            background-color: white;
+            top: 25px;
+            border-radius: 50%;
+            z-index: 1;
+            box-shadow: 0 0 0 4px var(--primary-color);
+            border: 2px solid white;
+        }
+        
+        /* تعديل موقع النقاط للمحطات على اليسار */
+        .timeline-item:nth-child(odd) .timeline-content::after {
+            right: -12px;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content::after {
+            left: -12px;
+            box-shadow: 0 0 0 4px var(--accent-color);
+        }
+        
+        .timeline-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content h3 {
+            color: var(--accent-color);
+        }
+        
+        .timeline-content h3 i {
+            margin-left: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .timeline-content .date {
+            color: var(--accent-color);
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block;
+            background: rgba(139, 0, 0, 0.1);
+            padding: 5px 10px;
+            border-radius: 20px;
+            width: fit-content;
+            font-size: 0.9rem;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content .date {
+            background: rgba(26, 71, 42, 0.1);
+            color: var(--primary-color);
+        }
+        
+        .timeline-content p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+        
+        .impact {
+            background: #f9f9f9;
+            padding: 10px 15px;
+            border-radius: 8px;
+            border-right: 3px solid var(--secondary-color);
+            font-size: 0.95rem;
+        }
+        
+        .impact strong {
+            color: var(--primary-color);
+        }
+        
+        /* أنماط الإحصائيات */
+        .stats {
+            background: linear-gradient(135deg, var(--primary-color), #0d331c);
+            color: white;
+            padding: 4rem 0;
+        }
+        
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+        
+        .stat-item {
+            padding: 30px 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            transition: var(--transition);
+            backdrop-filter: blur(5px);
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.15);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+        
+        .stat-text {
+            font-size: 1.2rem;
+        }
+        
+        /* أنماط المعرض */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 2rem;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            height: 250px;
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 15px;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+        
+        /* أنماط قسم المساعدة */
+        .help-section {
+            background: linear-gradient(135deg, var(--primary-color), #0d331c);
+            color: white;
+            text-align: center;
+            border-radius: 15px;
+            padding: 4rem 3rem;
+            margin-top: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .help-section h2 {
+            margin-bottom: 1.5rem;
+            font-size: 2.2rem;
+        }
+        
+        .help-section p {
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .btn-outline {
+            display: inline-block;
+            background-color: transparent;
+            color: white;
+            padding: 0.9rem 2rem;
+            border: 2px solid var(--secondary-color);
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: var(--transition);
+            margin-left: 10px;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+        }
+        
+        /* أنماط التذييل */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 3rem 0 2rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .footer-section p {
+            margin-bottom: 1rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        /* أنماط الاستجابة للجوال */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-color);
+                flex-direction: column;
+                padding: 1rem 0;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 0;
+                text-align: center;
+                padding: 0.8rem 0;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .crisis-timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-content::after {
+                left: 20px;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- الشريط العلوي -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">أزمة <span>السودان</span></div>
+                <ul class="nav-links">
+                    <li><a href="#home">الرئيسية</a></li>
+                    <li><a href="#crisis">محطات الأزمة</a></li>
+                    <li><a href="#stats">الإحصائيات</a></li>
+                    <li><a href="#gallery">المعرض</a></li>
+                    <li><a href="#help">المساعدة</a></li>
+                </ul>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- قسم البطل -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>أزمة السودان: من الثورة إلى المعاناة</h1>
+            <p>رحلة عبر محطات الأزمة السودانية منذ حكم البشير وحتى الصراع الحالي، وتأثيرها على الشعب السوداني</p>
+            <a href="#crisis" class="btn">اكتشف تفاصيل الأزمة</a>
+        </div>
+    </section>
+
+    <!-- قسم الأزمة -->
+    <section id="crisis">
+        <div class="container">
+            <h2 class="section-title">محطات الأزمة السودانية</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">شهد السودان تحولات دراماتيكية من حكم دام ثلاثين عامًا إلى ثورة شعبية، ثم إلى صراع مسلح يهدد مستقبل البلاد.</p>
+            
+            <div class="crisis-timeline">
+                <!-- المحطة 1 - على اليمين -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="date">1989 - 2019</span>
+                        <h3><i class="fas fa-gavel"></i> حكم البشير</h3>
+                        <p>حكم عمر البشير السودان لمدة 30 عامًا، تميزت بالاستبداد والقمع والفساد، وعزلت البلاد عن المجتمع الدولي.</p>
+                        <div class="impact">
+                            <strong>التأثير:</strong> تدهور الاقتصاد، انتشار الفساد، وعزل السودان دوليًا.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- المحطة 2 - على اليسار -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="date">ديسمبر 2018</span>
+                        <h3><i class="fas fa-fire"></i> بداية الاحتجاجات</h3>
+                        <p>اندلعت الاحتجاجات الشعبية بسبب الأزمة الاقتصادية وارتفاع أسعار الخبز والوقود، واتسعت لتطالب برحيل النظام.</p>
+                        <div class="impact">
+                            <strong>التأثير:</strong> تصاعد المطالب الشعبية برحيل النظام وبداية الحراك الثوري.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- المحطة 3 - على اليمين -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="date">أبريل 2019</span>
+                        <h3><i class="fas fa-times-circle"></i> إسقاط البشير</h3>
+                        <p>بعد أشهر من الاحتجاجات المستمرة، أطاح الجيش بالبشير، لكنه احتفظ بالسلطة، مما أثار غضب المحتجين.</p>
+                        <div class="impact">
+                            <strong>التأثير:</strong> نهاية حكم البشير لكن استمرار السيطرة العسكرية على السلطة.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- المحطة 4 - على اليسار -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="date">يونيو 2019</span>
+                        <h3><i class="fas fa-monument"></i> مذبحة القيادة العامة</h3>
+                        <p>اقتحمت قوات الأمن الاعتصام السلمي أمام القيادة العامة، مما أسفر عن مقتل أكثر من 100 متظاهر.</p>
+                        <div class="impact">
+                            <strong>التأثير:</strong> تصعيد القمع ضد المتظاهرين السلميين وتأجيج الغضب الشعبي.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- المحطة 5 - على اليمين -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="date">أغسطس 2019</span>
+                        <h3><i class="fas fa-handshake"></i> الاتفاق الدستوري</h3>
+                        <p>تم التوقيع على اتفاق لتقاسم السلطة بين المجلس العسكري وقوى الحرية والتغيير، مع فترة انتقالية مدتها 39 شهرًا.</p>
+                        <div class="impact">
+                            <strong>التأثير:</strong> تشكيل حكومة مدنية انتقالية وبداية أمل بالتحول الديمقراطي.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- المحطة 6 - على اليسار -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="date">أكتوبر 2021</span>
+                        <h3><i class="fas fa-fist-raised"></i> الانقلاب العسكري</h3>
+                        <p>قام الجيش بانقلاب عسكري، حل الحكومة الانتقالية وفرض حالة الطوارئ، مما أدى إلى احتجاجات واسعة.</p>
+                        <div class="impact">
+                            <strong>التأثير:</strong> نهاية التجربة الديمقراطية وعودة السيطرة العسكرية الكاملة.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- المحطة 7 - على اليمين -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="date">أبريل 2023</span>
+                        <h3><i class="fas fa-gun"></i> بداية الصراع المسلح</h3>
+                        <p>اندلع قتال عنيف بين الجيش السوداني وقوات الدعم السريع، مما أدى إلى أزمة إنسانية كارثية.</p>
+                        <div class="impact">
+                            <strong>التأثير:</strong> تدمير البنية التحتية، نزوح الملايين، وانهيار الخدمات الأساسية.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- المحطة 8 - على اليسار -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="date">حتى الآن</span>
+                        <h3><i class="fas fa-exclamation-triangle"></i> استمرار الأزمة</h3>
+                        <p>استمرار القتال وتدهور الأوضاع الإنسانية، مع نزوح الملايين وانهيار الخدمات الأساسية.</p>
+                        <div class="impact">
+                            <strong>التأثير:</strong> واحدة من أسوأ الأزمات الإنسانية في العالم مع معاناة يومية للمدنيين.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الإحصائيات -->
+    <section id="stats" class="stats">
+        <div class="container">
+            <h3 class="section-title" style="color: white;">الأزمة بالأرقام</h3>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number">150,000+</div>
+                    <div class="stat-text">قتيل منذ بداية الصراع</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">14M+</div>
+                    <div class="stat-text">نازح داخليًا وخارجيًا</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">30M+</div>
+                    <div class="stat-text">بحاجة للمساعدة الإنسانية</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">70%</div>
+                    <div class="stat-text">من المستشفيات غير عاملة</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم المعرض -->
+    <section id="gallery">
+        <div class="container">
+            <h2 class="section-title">معرض الأزمة</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">لقطات من معاناة الشعب السوداني خلال الأزمة الحالية</p>
+            
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1593113630400-ea4288922497?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="نازحون سودانيون">
+                    <div class="gallery-caption">عائلات سودانية نازحة تعيش في ظروف صعبة</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="data:image/jpeg;base64,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" >
+                    <div class="gallery-caption">دمار شامل في الأحياء السكنية نتيجة القصف</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="data:image/jpeg;base64,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" alt="أطفال متضررون">
+                    <div class="gallery-caption">أطفال سودانيون يعانون من نقص الغذاء والدواء</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- قسم المساعدة -->
+    <section id="help">
+        <div class="container">
+            <h2 class="section-title">كيف يمكنك المساعدة</h2>
+            <div class="help-section">
+                <h2>ادعم الشعب السوداني</h2>
+                <p>التبرعات تساعد في تقديم الغذاء، المأوى، الرعاية الصحية والتعليم للنازحين والمتأثرين بالصراع. يمكنك أيضًا المساعدة بنشر الوعي والضغط من أجل السلام.</p>
+                <a href="#" class="btn">تبرع الآن</a>
+                <a href="#" class="btn-outline">انشر القصة</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- التذييل -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>عن الموقع</h3>
+                    <p>هذا موقع يهدف إلى تسليط الضوء على أزمة السودان ونشر الوعي حول معاناة الشعب السوداني.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>روابط سريعة</h3>
+                    <p><a href="#home" style="color: #ddd;">الرئيسية</a></p>
+                    <p><a href="#crisis" style="color: #ddd;">محطات الأزمة</a></p>
+                    <p><a href="#help" style="color: #ddd;">المساعدة</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>تابعنا</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2023 أزمة السودان - جميع الحقوق محفوظة</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // تفعيل القائمة المتنقلة
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // إغلاق القائمة عند النقر على رابط
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+
+        // تأثير التمرير السلس للروابط
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // تأثير الظهور للجدول الزمني
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.3 });
+        
+        timelineItems.forEach(item => {
+            observer.observe(item);
+        });
+
+        // تأثير العداد للإحصائيات
+        const statNumbers = document.querySelectorAll('.stat-number');
+        let animated = false;
+
+        const animateStats = () => {
+            if (animated) return;
+            
+            statNumbers.forEach(stat => {
+                const target = parseInt(stat.textContent.replace(/,/g, '').replace('M', '000000').replace('+', ''));
+                let current = 0;
+                const increment = target / 100;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    
+                    // تنسيق الأرقام بشكل مناسب
+                    if (target >= 1000000) {
+                        stat.textContent = (current / 1000000).toFixed(1).replace('.0', '') + 'M' + (stat.textContent.includes('+') ? '+' : '');
+                    } else {
+                        stat.textContent = Math.floor(current).toLocaleString() + (stat.textContent.includes('%') ? '%' : '+');
+                    }
+                }, 20);
+            });
+            
+            animated = true;
+        };
+
+        // تفعيل عداد الإحصائيات عند التمرير
+        const statsSection = document.querySelector('.stats');
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateStats();
+                }
+            });
+        }, { threshold: 0.5 });
+
+        statsObserver.observe(statsSection);
+    </script>
+</body>
+</html>
