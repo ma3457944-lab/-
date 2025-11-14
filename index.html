@@ -177,6 +177,77 @@
             box-shadow: 0 6px 8px rgba(0,0,0,0.15);
         }
         
+        /* أزرار المشاركة الاجتماعية */
+        .share-section {
+            background: white;
+            border-radius: 15px;
+            padding: 3rem;
+            margin-top: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .share-title {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 1.5rem;
+        }
+        
+        .share-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: var(--transition);
+            min-width: 160px;
+            color: white;
+        }
+        
+        .share-btn i {
+            margin-left: 8px;
+            font-size: 1.2rem;
+        }
+        
+        .share-btn.facebook {
+            background: #3b5998;
+        }
+        
+        .share-btn.twitter {
+            background: #1da1f2;
+        }
+        
+        .share-btn.whatsapp {
+            background: #25d366;
+        }
+        
+        .share-btn.telegram {
+            background: #0088cc;
+        }
+        
+        .share-btn.linkedin {
+            background: #0077b5;
+        }
+        
+        .share-btn.copy {
+            background: #6c757d;
+        }
+        
+        .share-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
         /* أنماط الجدول الزمني للأزمة - محسّن */
         .crisis-timeline {
             position: relative;
@@ -428,6 +499,307 @@
             color: var(--dark-color);
         }
         
+        /* قسم التبرعات الجديد */
+        .donation-section {
+            background-color: white;
+            border-radius: 15px;
+            padding: 4rem 3rem;
+            margin-top: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .donation-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 2rem 0;
+        }
+        
+        .donation-option {
+            background: #f9f9f9;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 20px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .donation-option:hover, .donation-option.selected {
+            border-color: var(--primary-color);
+            background: rgba(26, 71, 42, 0.05);
+        }
+        
+        .donation-amount {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .donation-description {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .custom-donation {
+            margin-top: 20px;
+        }
+        
+        .custom-donation input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            text-align: center;
+        }
+        
+        .donation-form {
+            margin-top: 2rem;
+            text-align: right;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-group input:focus, .form-group select:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        
+        /* شات بوت محسّن */
+        .chatbot-section {
+            background-color: white;
+            border-radius: 15px;
+            padding: 4rem 3rem;
+            margin-top: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .chatbot-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .chatbot-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .chatbot-avatar {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 15px;
+        }
+        
+        .chatbot-avatar i {
+            font-size: 1.5rem;
+            color: white;
+        }
+        
+        .chatbot-info h3 {
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+        
+        .chatbot-info p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .api-status {
+            display: flex;
+            align-items: center;
+            margin-top: 8px;
+            font-size: 0.85rem;
+        }
+        
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-left: 6px;
+        }
+        
+        .status-connected {
+            background-color: #4CAF50;
+        }
+        
+        .status-disconnected {
+            background-color: #f44336;
+        }
+        
+        .status-connecting {
+            background-color: #FFC107;
+        }
+        
+        .chatbot-messages {
+            height: 400px;
+            overflow-y: auto;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .message {
+            max-width: 80%;
+            padding: 12px 18px;
+            margin-bottom: 15px;
+            border-radius: 18px;
+            line-height: 1.4;
+            position: relative;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .bot-message {
+            background: #e9f7ef;
+            border-bottom-right-radius: 5px;
+            align-self: flex-start;
+            color: #1a472a;
+            border-right: 3px solid var(--secondary-color);
+        }
+        
+        .user-message {
+            background: var(--primary-color);
+            color: white;
+            border-bottom-left-radius: 5px;
+            align-self: flex-end;
+        }
+        
+        .chatbot-input {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .chatbot-input input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 25px;
+            font-size: 1rem;
+        }
+        
+        .chatbot-input button {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .chatbot-input button:hover {
+            background: #0d331c;
+        }
+        
+        .suggested-questions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .suggested-question {
+            background: #f0f0f0;
+            border: none;
+            border-radius: 20px;
+            padding: 8px 15px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .suggested-question:hover {
+            background: #e0e0e0;
+        }
+        
+        .typing-indicator {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 18px;
+            background: #e9f7ef;
+            border-radius: 18px;
+            margin-bottom: 15px;
+            align-self: flex-start;
+            border-right: 3px solid var(--secondary-color);
+        }
+        
+        .typing-dots {
+            display: flex;
+            gap: 4px;
+        }
+        
+        .typing-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #1a472a;
+            border-radius: 50%;
+            animation: typing 1.4s infinite ease-in-out;
+        }
+        
+        .typing-dot:nth-child(1) { animation-delay: -0.32s; }
+        .typing-dot:nth-child(2) { animation-delay: -0.16s; }
+        
+        @keyframes typing {
+            0%, 80%, 100% { transform: scale(0.8); opacity: 0.5; }
+            40% { transform: scale(1); opacity: 1; }
+        }
+        
+        .message-time {
+            font-size: 0.7rem;
+            opacity: 0.7;
+            margin-top: 5px;
+            text-align: left;
+        }
+        
+        .user-message .message-time {
+            text-align: right;
+        }
+        
         /* أنماط التذييل */
         footer {
             background-color: var(--dark-color);
@@ -544,6 +916,32 @@
                 margin-top: 10px;
                 width: 100%;
             }
+            
+            .donation-options {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .message {
+                max-width: 90%;
+            }
+            
+            .chatbot-section {
+                padding: 3rem 1.5rem;
+            }
+            
+            .share-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .share-btn {
+                width: 100%;
+                max-width: 250px;
+            }
         }
         
         /* تحسينات إضافية للجوال */
@@ -600,13 +998,17 @@
                 height: 200px;
             }
             
-            .help-section {
+            .help-section, .donation-section, .chatbot-section, .share-section {
                 padding: 3rem 1.5rem;
                 margin: 1rem;
             }
             
             .help-section h2 {
                 font-size: 1.8rem;
+            }
+            
+            .donation-options {
+                grid-template-columns: 1fr;
             }
             
             .footer-content {
@@ -657,6 +1059,103 @@
             .btn:hover {
                 transform: none;
             }
+            
+            .donation-option:hover {
+                border-color: #e0e0e0;
+                background: #f9f9f9;
+            }
+            
+            .donation-option.selected {
+                border-color: var(--primary-color);
+                background: rgba(26, 71, 42, 0.05);
+            }
+            
+            .share-btn:hover {
+                transform: none;
+            }
+        }
+        
+        /* أنماط طرق الدفع */
+        .payment-methods {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .payment-method {
+            display: flex;
+            align-items: center;
+            background: #f9f9f9;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+        
+        .payment-method.selected {
+            border-color: var(--primary-color);
+            background: rgba(26, 71, 42, 0.05);
+        }
+        
+        .payment-method i {
+            margin-left: 8px;
+            font-size: 1.5rem;
+        }
+        
+        .instapay-logo {
+            color: #ff6b00;
+        }
+        
+        .credit-card-logo {
+            color: var(--primary-color);
+        }
+        
+        .payment-details {
+            margin-top: 20px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            display: none;
+        }
+        
+        .payment-details.active {
+            display: block;
+        }
+        
+        .payment-info {
+            text-align: right;
+            margin-bottom: 15px;
+        }
+        
+        .payment-info h4 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .qr-code {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .qr-code img {
+            max-width: 200px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        
+        .vodafone-cash {
+            color: #e60000;
+        }
+        
+        .orange-money {
+            color: #ff6600;
+        }
+        
+        .etisalat-cash {
+            color: #1e8bc3;
         }
     </style>
 </head>
@@ -671,6 +1170,9 @@
                     <li><a href="#crisis">محطات الأزمة</a></li>
                     <li><a href="#stats">الإحصائيات</a></li>
                     <li><a href="#gallery">المعرض</a></li>
+                    <li><a href="#donation">التبرعات</a></li>
+                    <li><a href="#share">انشر القصة</a></li>
+                    <li><a href="#chatbot">المساعد الذكي</a></li>
                     <li><a href="#help">المساعدة</a></li>
                 </ul>
                 <div class="mobile-menu">
@@ -832,13 +1334,246 @@
                     <div class="gallery-caption">عائلات سودانية نازحة تعيش في ظروف صعبة</div>
                 </div>
                 <div class="gallery-item">
-                                       <img src="data:image/jpeg;base64,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" >
-
+                    <img src="https://images.unsplash.com/photo-1589652717521-10c0d092dea9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="دمار في السودان" loading="lazy">
                     <div class="gallery-caption">دمار شامل في الأحياء السكنية نتيجة القصف</div>
                 </div>
                 <div class="gallery-item">
                     <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="أطفال متضررون" loading="lazy">
                     <div class="gallery-caption">أطفال سودانيون يعانون من نقص الغذاء والدواء</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم التبرعات الجديد -->
+    <section id="donation">
+        <div class="container">
+            <h2 class="section-title">ادعم الشعب السوداني</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">تبرع الآن للمساعدة في تقديم الغذاء، المأوى، الرعاية الصحية والتعليم للنازحين والمتأثرين بالصراع</p>
+            
+            <div class="donation-section">
+                <h3 style="margin-bottom: 1.5rem; color: var(--primary-color);">اختر مبلغ التبرع</h3>
+                
+                <!-- خيارات التبرع بالجنيه المصري فقط -->
+                <div class="donation-options">
+                    <div class="donation-option" data-amount="250">
+                        <div class="donation-amount">250 ج.م</div>
+                        <div class="donation-description">تكفي لتوفير وجبات غذائية لأسرة ليوم واحد</div>
+                    </div>
+                    <div class="donation-option" data-amount="500">
+                        <div class="donation-amount">500 ج.م</div>
+                        <div class="donation-description">تكفي لتوفير مأوى طارئ لشخص واحد</div>
+                    </div>
+                    <div class="donation-option" data-amount="1250">
+                        <div class="donation-amount">1250 ج.م</div>
+                        <div class="donation-description">تكفي لتوفير رعاية صحية أساسية لشخصين</div>
+                    </div>
+                    <div class="donation-option" data-amount="2500">
+                        <div class="donation-amount">2500 ج.م</div>
+                        <div class="donation-description">تكفي لتوفير تعليم طارئ لطفل لمدة شهر</div>
+                    </div>
+                </div>
+                
+                <div class="custom-donation">
+                    <input type="number" id="custom-amount" placeholder="أو أدخل مبلغًا مخصصًا (جنيه مصري)">
+                </div>
+                
+                <div class="payment-methods">
+                    <div class="payment-method selected" data-method="mobile">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span>محافظ رقمية</span>
+                    </div>
+                    <div class="payment-method" data-method="card">
+                        <i class="far fa-credit-card credit-card-logo"></i>
+                        <span>بطاقة ائتمان</span>
+                    </div>
+                </div>
+                
+                <div class="payment-details active" id="mobile-details">
+                    <div class="payment-info">
+                        <h4>الدفع عبر المحافظ الرقمية</h4>
+                        <p>اختر إحدى خدمات المحافظ الرقمية للتبرع</p>
+                    </div>
+                    
+                    <div class="payment-methods" style="justify-content: center; margin: 20px 0;">
+                        <div class="payment-method selected" data-wallet="vodafone">
+                            <i class="fas fa-wallet vodafone-cash"></i>
+                            <span>فودافون كاش</span>
+                        </div>
+                        <div class="payment-method" data-wallet="orange">
+                            <i class="fas fa-wallet orange-money"></i>
+                            <span>أورانج ماني</span>
+                        </div>
+                        <div class="payment-method" data-wallet="etisalat">
+                            <i class="fas fa-wallet etisalat-cash"></i>
+                            <span>اتصالات كاش</span>
+                        </div>
+                    </div>
+                    
+                    <div class="qr-code">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=MobileWalletDonationSudan" alt="رمز المحفظة الرقمية">
+                    </div>
+                    
+                    <p style="text-align: center; margin-top: 15px;">أو أرسل المبلغ إلى الرقم: <strong id="wallet-number">01012345678</strong></p>
+                </div>
+                
+                <div class="payment-details" id="card-details">
+                    <div class="payment-info">
+                        <h4>أدخل معلومات بطاقة الائتمان</h4>
+                    </div>
+                    <div class="form-group">
+                        <label for="card-number">رقم البطاقة</label>
+                        <input type="text" id="card-number" placeholder="1234 5678 9012 3456">
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="expiry-date">تاريخ الانتهاء</label>
+                            <input type="text" id="expiry-date" placeholder="MM/YY">
+                        </div>
+                        <div class="form-group">
+                            <label for="cvv">CVV</label>
+                            <input type="text" id="cvv" placeholder="123">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="card-name">اسم حامل البطاقة</label>
+                        <input type="text" id="card-name" placeholder="كما هو مدون على البطاقة">
+                    </div>
+                    
+                    <button type="submit" class="btn" style="width: 100%; margin-top: 1.5rem;">تبرع الآن</button>
+                </div>
+                
+                <div class="donation-form">
+                    <h3 style="margin-bottom: 1.5rem; color: var(--primary-color);">معلومات التبرع</h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">الاسم الكامل</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">البريد الإلكتروني</label>
+                            <input type="email" id="email" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">رقم الهاتف</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="country">البلد</label>
+                            <select id="country" required>
+                                <option value="">اختر البلد</option>
+                                <option value="EG">مصر</option>
+                                <option value="SA">السعودية</option>
+                                <option value="AE">الإمارات</option>
+                                <option value="KW">الكويت</option>
+                                <option value="QA">قطر</option>
+                                <option value="BH">البحرين</option>
+                                <option value="OM">عمان</option>
+                                <option value="other">دولة أخرى</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم مشاركة القصة -->
+    <section id="share">
+        <div class="container">
+            <h2 class="section-title">انشر القصة</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">ساعد في نشر الوعي حول أزمة السودان من خلال مشاركة هذه القصة مع أصدقائك وعائلتك</p>
+            
+            <div class="share-section">
+                <h3 class="share-title">شارك قصة السودان</h3>
+                <p style="text-align: center; margin-bottom: 2rem; color: #555;">
+                    كل مشاركة تساعد في زيادة الوعي حول المعاناة الإنسانية في السودان ويمكن أن تساهم في دعم جهود الإغاثة.
+                </p>
+                
+                <div class="share-buttons">
+                    <a href="#" class="share-btn facebook" id="share-facebook">
+                        <i class="fab fa-facebook-f"></i>
+                        فيسبوك
+                    </a>
+                    <a href="#" class="share-btn twitter" id="share-twitter">
+                        <i class="fab fa-twitter"></i>
+                        تويتر
+                    </a>
+                    <a href="https://ma3457944-lab.github.io/-/" class="share-btn whatsapp" id="share-whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                        واتساب
+                    </a>
+                    <a href="#" class="share-btn telegram" id="share-telegram">
+                        <i class="fab fa-telegram"></i>
+                        تليجرام
+                    </a>
+                    <a href="#" class="share-btn linkedin" id="share-linkedin">
+                        <i class="fab fa-linkedin-in"></i>
+                        لينكدإن
+                    </a>
+                    <button class="share-btn copy" id="share-copy">
+                        <i class="fas fa-copy"></i>
+                        نسخ الرابط
+                    </button>
+                </div>
+                
+                <div style="margin-top: 2rem; padding: 15px; background: #f8f9fa; border-radius: 8px;">
+                    <p style="text-align: center; margin: 0; color: #666; font-size: 0.9rem;">
+                        <i class="fas fa-info-circle" style="color: var(--primary-color); margin-left: 5px;"></i>
+                        شارك هذا الرابط: <span id="page-url" style="font-weight: bold; color: var(--primary-color);"></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم شات بوت محسّن -->
+    <section id="chatbot">
+        <div class="container">
+            <h2 class="section-title">اسأل عن الأزمة السودانية</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">استخدم الشات بوت المدعوم بالذكاء الاصطناعي للتعرف أكثر على الأزمة السودانية وكيف يمكنك المساعدة</p>
+            
+            <div class="chatbot-section">
+                <div class="chatbot-container">
+                    <div class="chatbot-header">
+                        <div class="chatbot-avatar">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="chatbot-info">
+                            <h3>مساعد أزمة السودان</h3>
+                            <p>مدعوم بالذكاء الاصطناعي - اسألني عن أي شيء يتعلق بالأزمة</p>
+                            <div class="api-status">
+                                <span id="api-status-text">جاري الاتصال...</span>
+                                <div class="status-dot" id="api-status-dot"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chatbot-messages" id="chat-messages">
+                        <div class="message bot-message">
+                            السلام عليكم! أنا مساعد أزمة السودان المدعوم بالذكاء الاصطناعي. يمكنني الإجابة على أسئلتك حول الأزمة الإنسانية في السودان، أسبابها، تأثيرها على الشعب السوداني، وكيف يمكنك المساعدة.<br><br>
+                            ما الذي تريد معرفته عن الأزمة السودانية؟
+                            <div class="message-time" id="initial-time"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="chatbot-input">
+                        <input type="text" id="user-input" placeholder="اكتب سؤالك هنا...">
+                        <button id="send-btn"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                    
+                    <div class="suggested-questions">
+                        <button class="suggested-question" data-question="ما هي أسباب الأزمة الحالية في السودان؟">أسباب الأزمة</button>
+                        <button class="suggested-question" data-question="كيف يمكنني المساعدة في أزمة السودان؟">كيف أستطيع المساعدة؟</button>
+                        <button class="suggested-question" data-question="ما هي أحدث الإحصائيات عن الأزمة؟">الإحصائيات الحديثة</button>
+                        <button class="suggested-question" data-question="ما هي المنظمات الموثوقة التي تساعد في السودان؟">المنظمات المساعدة</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -852,8 +1587,8 @@
                 <h2>ادعم الشعب السوداني</h2>
                 <p>التبرعات تساعد في تقديم الغذاء، المأوى، الرعاية الصحية والتعليم للنازحين والمتأثرين بالصراع. يمكنك أيضًا المساعدة بنشر الوعي والضغط من أجل السلام.</p>
                 <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
-                    <a href="#" class="btn">تبرع الآن</a>
-                    <a href="#" class="btn-outline">انشر القصة</a>
+                    <a href="#donation" class="btn">تبرع الآن</a>
+                    <a href="#share" class="btn-outline">انشر القصة</a>
                 </div>
             </div>
         </div>
@@ -871,6 +1606,8 @@
                     <h3>روابط سريعة</h3>
                     <p><a href="#home" style="color: #ddd;">الرئيسية</a></p>
                     <p><a href="#crisis" style="color: #ddd;">محطات الأزمة</a></p>
+                    <p><a href="#donation" style="color: #ddd;">التبرعات</a></p>
+                    <p><a href="#share" style="color: #ddd;">انشر القصة</a></p>
                     <p><a href="#help" style="color: #ddd;">المساعدة</a></p>
                 </div>
                 <div class="footer-section">
@@ -969,19 +1706,432 @@
 
         statsObserver.observe(statsSection);
 
-        // تحسينات للجوال
-        document.addEventListener('DOMContentLoaded', function() {
-            // منع الزوم المزدوج على iOS
-            let lastTouchEnd = 0;
-            document.addEventListener('touchend', function (event) {
-                const now = (new Date()).getTime();
-                if (now - lastTouchEnd <= 300) {
-                    event.preventDefault();
+        // منطق اختيار مبلغ التبرع
+        let selectedAmount = 250;
+        
+        document.querySelectorAll('.donation-option').forEach(option => {
+            option.addEventListener('click', function() {
+                // إزالة التحديد من جميع الخيارات
+                document.querySelectorAll('.donation-option').forEach(opt => {
+                    opt.classList.remove('selected');
+                });
+                
+                // تحديد الخيار المختار
+                this.classList.add('selected');
+                
+                // تعيين المبلغ المحدد
+                selectedAmount = this.getAttribute('data-amount');
+                
+                // مسح حقل المبلغ المخصص
+                document.getElementById('custom-amount').value = '';
+            });
+        });
+
+        // عند إدخال مبلغ مخصص، إلغاء تحديد الخيارات الأخرى
+        document.getElementById('custom-amount').addEventListener('input', function() {
+            document.querySelectorAll('.donation-option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            
+            selectedAmount = this.value;
+        });
+
+        // اختيار طريقة الدفع
+        document.querySelectorAll('.payment-method').forEach(method => {
+            method.addEventListener('click', function() {
+                // إزالة التحديد من جميع الطرق
+                document.querySelectorAll('.payment-method').forEach(m => {
+                    m.classList.remove('selected');
+                });
+                
+                // تحديد الطريقة المختارة
+                this.classList.add('selected');
+                
+                const methodType = this.getAttribute('data-method');
+                
+                // إخفاء جميع تفاصيل الدفع
+                document.querySelectorAll('.payment-details').forEach(detail => {
+                    detail.classList.remove('active');
+                });
+                
+                // إظهار تفاصيل الدفع المحددة
+                document.getElementById(`${methodType}-details`).classList.add('active');
+            });
+        });
+
+        // اختيار المحفظة الرقمية
+        document.querySelectorAll('#mobile-details .payment-method').forEach(method => {
+            method.addEventListener('click', function() {
+                // إزالة التحديد من جميع الطرق
+                document.querySelectorAll('#mobile-details .payment-method').forEach(m => {
+                    m.classList.remove('selected');
+                });
+                
+                // تحديد الطريقة المختارة
+                this.classList.add('selected');
+                
+                const walletType = this.getAttribute('data-wallet');
+                const walletNumber = document.getElementById('wallet-number');
+                
+                // تحديث رقم المحفظة
+                if (walletType === 'vodafone') {
+                    walletNumber.textContent = '01012345678';
+                } else if (walletType === 'orange') {
+                    walletNumber.textContent = '01234567890';
+                } else if (walletType === 'etisalat') {
+                    walletNumber.textContent = '01123456789';
                 }
-                lastTouchEnd = now;
-            }, false);
+            });
+        });
+
+        // منطق الشات بوت المحسّن
+        const chatMessages = document.getElementById('chat-messages');
+        const userInput = document.getElementById('user-input');
+        const sendBtn = document.getElementById('send-btn');
+        const apiStatusText = document.getElementById('api-status-text');
+        const apiStatusDot = document.getElementById('api-status-dot');
+        const initialTime = document.getElementById('initial-time');
+        
+        // تعيين الوقت الحالي للرسالة الأولى
+        initialTime.textContent = getCurrentTime();
+        
+        // تحديث حالة الاتصال
+        function updateApiStatus(status, text) {
+            apiStatusDot.className = 'status-dot';
+            apiStatusText.textContent = text;
+            
+            switch(status) {
+                case 'connected':
+                    apiStatusDot.classList.add('status-connected');
+                    break;
+                case 'disconnected':
+                    apiStatusDot.classList.add('status-disconnected');
+                    break;
+                case 'connecting':
+                    apiStatusDot.classList.add('status-connecting');
+                    break;
+            }
+        }
+        
+        // الحصول على الوقت الحالي
+        function getCurrentTime() {
+            const now = new Date();
+            return now.getHours() + ':' + (now.getMinutes() < 10 ? '0' : '') + now.getMinutes();
+        }
+        
+        // إظهار مؤشر الكتابة
+        function showTypingIndicator() {
+            const typingDiv = document.createElement('div');
+            typingDiv.classList.add('typing-indicator');
+            typingDiv.id = 'typing-indicator';
+            
+            const typingDots = document.createElement('div');
+            typingDots.classList.add('typing-dots');
+            
+            for (let i = 0; i < 3; i++) {
+                const dot = document.createElement('div');
+                dot.classList.add('typing-dot');
+                typingDots.appendChild(dot);
+            }
+            
+            typingDiv.appendChild(typingDots);
+            chatMessages.appendChild(typingDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+        
+        // إخفاء مؤشر الكتابة
+        function hideTypingIndicator() {
+            const typingIndicator = document.getElementById('typing-indicator');
+            if (typingIndicator) {
+                typingIndicator.remove();
+            }
+        }
+        
+        // إضافة رسالة إلى الشات
+        function addMessage(text, sender) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('message');
+            messageDiv.classList.add(sender === 'user' ? 'user-message' : 'bot-message');
+            
+            // معالجة النص لإظهار الأسطر الجديدة
+            const formattedText = text.replace(/\n/g, '<br>');
+            messageDiv.innerHTML = formattedText;
+            
+            // إضافة وقت الرسالة
+            const timeDiv = document.createElement('div');
+            timeDiv.classList.add('message-time');
+            timeDiv.textContent = getCurrentTime();
+            messageDiv.appendChild(timeDiv);
+            
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+        
+        // محاكاة الاتصال مع OpenAI API
+        async function getGPTResponse(userMessage) {
+            updateApiStatus('connecting', 'جاري معالجة السؤال...');
+            
+            try {
+                // في بيئة حقيقية، هنا سيتم الاتصال مع واجهة برمجة تطبيقات OpenAI
+                // const response = await fetch('https://api.openai.com/v1/chat/completions', {...});
+                
+                // محاكاة وقت الانتظار للاتصال مع API
+                await new Promise(resolve => setTimeout(resolve, 1500));
+                
+                // محاكاة الرد من GPT باستخدام قاعدة معرفة مسبقة
+                const response = generateResponse(userMessage);
+                updateApiStatus('connected', 'متصل - جاهز للرد');
+                
+                return response;
+            } catch (error) {
+                console.error('خطأ في الاتصال:', error);
+                updateApiStatus('disconnected', 'خطأ في الاتصال - استخدام الردود المحلية');
+                
+                // استخدام الردود الاحتياطية في حالة فشل الاتصال
+                return getFallbackResponse(userMessage);
+            }
+        }
+        
+        // توليد رد محاكٍ لـ GPT
+        function generateResponse(userMessage) {
+            const responses = {
+                "السلام عليكم": "وعليكم السلام ورحمة الله وبركاته! كيف يمكنني مساعدتك اليوم في معلومات عن أزمة السودان؟",
+                
+                "ما هي أسباب الأزمة الحالية في السودان؟": "الأزمة الحالية في السودان نتجت عن صراع على السلطة بين الجيش السوداني وقوات الدعم السريع بعد الإطاحة بنظام البشير. بدأ الصراع المسلح في أبريل 2023 وأدى إلى أزمة إنسانية كارثية. الخلافات حول دمج قوات الدعم السريع في الجيش النظامي كانت الشرارة الرئيسية للصراع، بالإضافة إلى التنافس على الموارد والنفوذ.",
+                
+                "كيف يمكنني المساعدة في أزمة السودان؟": `يمكنك المساعدة بعدة طرق:
+1. التبرع للمنظمات الإنسانية الموثوقة مثل الهلال الأحمر السوداني، برنامج الأغذية العالمي، أو منظمة أطباء بلا حدود
+2. نشر الوعي حول الأزمة على وسائل التواصل الاجتماعي
+3. الضغط على الحكومات والمنظمات الدولية للتدخل العاجل
+4. دعم حملات السلام والمبادرات الدبلوماسية
+5. التواصل مع النازحين السودانيين في مجتمعك وتقديم الدعم النفسي والاجتماعي
+6. المشاركة في فعاليات جمع التبرعات المحلية`,
+                
+                "ما هي أحدث الإحصائيات عن الأزمة؟": `حسب آخر التقارير الدولية:
+- أكثر من 14 مليون شخص نازح داخلياً وخارجياً
+- أكثر من 30 مليون شخص بحاجة للمساعدة الإنسانية العاجلة
+- 70% من المستشفيات والمرفق الصحية غير عاملة
+- أكثر من 150,000 قتيل منذ بداية الصراع
+- انهيار النظام التعليمي حيث فقد 19 مليون طفل فرصتهم في التعليم
+- أزمة غذاء حادة حيث يعاني 18 مليون شخص من انعدام الأمن الغذائي`,
+                
+                "ما هي المنظمات الموثوقة التي تساعد في السودان؟": `هناك عدة منظمات موثوقة تعمل في السودان:
+- برنامج الأغذية العالمي (WFP)
+- مفوضية الأمم المتحدة لشؤون اللاجئين (UNHCR)
+- منظمة الصحة العالمية (WHO)
+- اللجنة الدولية للصليب الأحمر (ICRC)
+- منظمة أطباء بلا حدود (MSF)
+- منظمة أنقذوا الأطفال (Save the Children)
+- الهلال الأحمر السوداني
+- منظمة أوكسفام (Oxfam)
+- منظمة كاريتاس الدولية (Caritas)`,
+                
+                "ما هو الوضع الإنساني الحالي في السودان؟": `الوضع الإنساني في السودان يوصف بأنه كارثي:
+- نزوح جماعي للمدنيين من مناطق القتال
+- نقص حاد في الغذاء والماء والدواء
+- انتشار الأمراض وسوء التغذية خاصة بين الأطفال
+- انهيار الخدمات الأساسية من كهرباء ومياه واتصالات
+- تدمير البنية التحتية بما فيها المستشفيات والمدارس
+- أزمة وقود وطاقة خانقة
+- ارتفاع معدلات العنف الجنسي والعنف القائم على النوع الاجتماعي`,
+                
+                "ما هي جذور الأزمة السودانية؟": `جذور الأزمة تعود لعوامل تاريخية واقتصادية وسياسية متعددة:
+- حكم عمر البشير الذي دام 30 عاماً وتميز بالاستبداد والفساد
+- تهميش مناطق واسعة من السودان في عملية التنمية
+- الصراعات على الموارد والثروة
+- الفشل في بناء نظام ديمقراطي حقيقي بعد ثورة 2019
+- التنافس بين مؤسسات الدولة على السلطة والموارد
+- تأثيرات التغيرات الإقليمية والدولية على السودان`,
+                
+                "هل هناك جهود سلام جارية؟": `نعم، هناك عدة جهود سلام بوساطة دولية وإقليمية:
+- وساطة saudية أمريكية في جدة
+- جهود الاتحاد الأفريقي والجامعة العربية
+- مبادرات دول الجوار مثل مصر وجنوب السودان
+- جهود أممية عبر بعثة الأمم المتحدة في السودان
+
+لكن هذه الجهود لم تنجح حتى الآن في تحقيق وقف دائم لإطلاق النار بسبب تعقيدات الموقف وتباين مصالح الأطراف المتصارعة.`,
+                
+                "ما هو تأثير الأزمة على الأطفال؟": `الأطفال هم الأكثر تضرراً من الأزمة:
+- حرمان 19 مليون طفل من التعليم
+- انتشار سوء التغذية الحاد بين الأطفال
+- تعرض الأطفال للعنف والاستغلال
+- حرمانهم من الرعاية الصحية الأساسية
+- تأثير نفسي عميق بسبب العنف والنزوح
+- تجنيد الأطفال في الصراع
+- تفكك الأسر وزيادة عدد الأطفال المنفصلين عن ذويهم`,
+                
+                "ما هي التحديات التي تواجه المساعدات الإنسانية؟": `تواجه المساعدات الإنسانية تحديات كبيرة:
+- صعوبة الوصول للمناطق المتضررة بسبب القتال
+- استهداف العاملين في المجال الإنساني
+- نقص التمويل للمنظمات الإغاثية
+- تعقيدات لوجستية في توزيع المساعدات
+- تدهور البنية التحتية والطرق
+- صعوبة تأمين ممرات إنسانية آمنة
+- تزايد الاحتياجات بشكل أسرع من قدرة الاستجابة`,
+                
+                "ما هو مستقبل السودان؟": `مستقبل السودان يعتمد على عدة عوامل:
+- نجاح جهود السلام والمفاوضات
+- قدرة الأطراف على التوصل لتسوية سياسية شاملة
+- دعم المجتمع الدولي لإعادة الإعمار
+- استعادة الثقة بين مكونات الشعب السوداني
+- بناء مؤسسات ديمقراطية قادرة على إدارة الفترة الانتقالية
+- معالجة الأسباب الجذرية للصراع بما فيها التوزيع العادل للثروة والسلطة
+- تحقيق العدالة الانتقالية ومحاسبة perpetrators الانتهاكات`
+            };
+
+            // البحث عن أفضل تطابق
+            let bestMatch = null;
+            let bestMatchLength = 0;
+            
+            for (const [question, answer] of Object.entries(responses)) {
+                const similarity = calculateSimilarity(userMessage, question);
+                if (similarity > bestMatchLength) {
+                    bestMatchLength = similarity;
+                    bestMatch = answer;
+                }
+            }
+            
+            // إذا كان هناك تطابق جيد، استخدمه
+            if (bestMatchLength > 0.3) {
+                return bestMatch;
+            }
+            
+            // الرد الافتراضي
+            return "شكراً لسؤالك. أنا مساعد ذكي مصمم للإجابة على الأسئلة المتعلقة بأزمة السودان. يمكنني تقديم معلومات عن أسباب الأزمة، كيفية المساعدة، الإحصائيات، والمنظمات الإنسانية. هل يمكنك إعادة صياغة سؤالك أو اختيار أحد الأسئلة المقترحة؟";
+        }
+        
+        // حساب التشابه بين سلسلتين نصيتين
+        function calculateSimilarity(str1, str2) {
+            const set1 = new Set(str1.split(''));
+            const set2 = new Set(str2.split(''));
+            const intersection = new Set([...set1].filter(x => set2.has(x)));
+            const union = new Set([...set1, ...set2]);
+            return intersection.size / union.size;
+        }
+        
+        // الردود الاحتياطية في حالة فشل الاتصال
+        function getFallbackResponse(userMessage) {
+            return "شكراً لسؤالك حول أزمة السودان. حالياً، النظام يعتمد على الردود المحلية بسبب مشاكل في الاتصال. يرجى المحاولة مرة أخرى لاحقاً أو استخدام أحد الأسئلة المقترحة للحصول على معلومات فورية.";
+        }
+        
+        // إرسال رسالة المستخدم والحصول على رد
+        async function sendMessage() {
+            const message = userInput.value.trim();
+            if (message === '') return;
+            
+            // إضافة رسالة المستخدم
+            addMessage(message, 'user');
+            
+            // مسح حقل الإدخال
+            userInput.value = '';
+            
+            // إظهار مؤشر الكتابة
+            showTypingIndicator();
+            
+            try {
+                // الحصول على الرد من GPT
+                const response = await getGPTResponse(message);
+                
+                // إخفاء مؤشر الكتابة
+                hideTypingIndicator();
+                
+                // إضافة رد البوت
+                addMessage(response, 'bot');
+            } catch (error) {
+                hideTypingIndicator();
+                addMessage("عذراً، حدث خطأ في الاتصال. يرجى المحاولة مرة أخرى لاحقاً.", 'bot');
+            }
+        }
+        
+        // إرسال الرسالة عند النقر على الزر
+        sendBtn.addEventListener('click', sendMessage);
+        
+        // إرسال الرسالة عند الضغط على Enter
+        userInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+        
+        // الأسئلة المقترحة
+        document.querySelectorAll('.suggested-question').forEach(button => {
+            button.addEventListener('click', function() {
+                const question = this.getAttribute('data-question');
+                userInput.value = question;
+                sendMessage();
+            });
+        });
+        
+        // تحديث حالة الاتصال عند تحميل الصفحة
+        updateApiStatus('connecting', 'جاري التهيئة...');
+        setTimeout(() => {
+            updateApiStatus('connected', 'متصل - جاهز للرد');
+        }, 2000);
+        
+        // التركيز على حقل الإدخال عند تحميل الصفحة
+        window.addEventListener('load', () => {
+            userInput.focus();
+        });
+
+        // منطق مشاركة القصة
+        const pageUrl = window.location.href;
+        const pageTitle = 'أزمة السودان: من الثورة إلى المعاناة';
+        const pageDescription = 'تعرف على الأزمة الإنسانية في السودان وكيف يمكنك المساعدة في دعم الشعب السوداني';
+        
+        // تعيين رابط الصفحة
+        document.getElementById('page-url').textContent = pageUrl;
+        
+        // مشاركة على فيسبوك
+        document.getElementById('share-facebook').addEventListener('click', function(e) {
+            e.preventDefault();
+            const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(pageUrl)}`;
+            window.open(shareUrl, '_blank', 'width=600,height=400');
+        });
+        
+        // مشاركة على تويتر
+        document.getElementById('share-twitter').addEventListener('click', function(e) {
+            e.preventDefault();
+            const shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(pageTitle)}&url=${encodeURIComponent(pageUrl)}`;
+            window.open(shareUrl, '_blank', 'width=600,height=400');
+        });
+        
+        // مشاركة على واتساب
+        document.getElementById('share-whatsapp').addEventListener('click', function(e) {
+            e.preventDefault();
+            const shareUrl = `https://wa.me/?text=${encodeURIComponent(pageTitle + ' ' + pageUrl)}`;
+            window.open(shareUrl, '_blank', 'width=600,height=400');
+        });
+        
+        // مشاركة على تليجرام
+        document.getElementById('share-telegram').addEventListener('click', function(e) {
+            e.preventDefault();
+            const shareUrl = `https://t.me/share/url?url=${encodeURIComponent(pageUrl)}&text=${encodeURIComponent(pageTitle)}`;
+            window.open(shareUrl, '_blank', 'width=600,height=400');
+        });
+        
+        // مشاركة على لينكدإن
+        document.getElementById('share-linkedin').addEventListener('click', function(e) {
+            e.preventDefault();
+            const shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(pageUrl)}`;
+            window.open(shareUrl, '_blank', 'width=600,height=400');
+        });
+        
+        // نسخ الرابط
+        document.getElementById('share-copy').addEventListener('click', function() {
+            navigator.clipboard.writeText(pageUrl).then(() => {
+                // تغيير نص الزر مؤقتاً
+                const originalText = this.innerHTML;
+                this.innerHTML = '<i class="fas fa-check"></i> تم النسخ!';
+                this.style.background = '#4CAF50';
+                
+                setTimeout(() => {
+                    this.innerHTML = originalText;
+                    this.style.background = '';
+                }, 2000);
+            });
         });
     </script>
 </body>
 </html>
+
 
